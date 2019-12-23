@@ -1,0 +1,36 @@
+﻿Connect EC2 to RDS server from command prompt
+-----------------------------------------------------------------
+
+sudo -i 
+
+yum install httpd
+
+service httpd start
+
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+
+sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+
+yum install php php-mysql
+
+
+service httpd restart
+
+
+yum update
+
+yum install mysql-server
+service mysql start
+
+mysql --version
+
+mysql  -u master -p -h db-server1.clzt9r7vq0jg.ap-south-1.rds.amazonaws.com -P 3306
+use emp_db_ep  (database name )
+
+// master is user name
+//  db-server1.clzt9r7vq0jg.ap-south-1.rds.amazonaws.com    is end point
+// Enter password 
+//start SQL commands
+
+use student
+select * from student ;

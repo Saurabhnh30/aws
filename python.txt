@@ -1,0 +1,11 @@
+pip install pyodbc
+
+import pyodbc 
+conn = pyodbc.connect('Driver={SQL Server};Server=mssqlinstance.cd0clzgzuh1o.ap-south-1.rds.amazonaws.com;Database=MyDB;uid=saurabh;pwd=saurabh101;Trusted_Connection=no;')
+
+cursor = conn.cursor()
+cursor.execute('SELECT * FROM dbo.student')
+print("Something")
+
+for row in cursor:
+    print(row)

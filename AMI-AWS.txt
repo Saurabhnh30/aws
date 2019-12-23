@@ -1,0 +1,26 @@
+AMI - Amazon machine Image
+
+AMI provides essential info to launch a virtual machine in the cloud.
+
+1) EC2 -> Services -> launch instance -> free tier only.
+
+2) select Amazon Linux 2 AMI (HVM) -> general purpose -> configure instance details.
+
+3) add vpc -> enable -> next -> add tags (NAME  linux sever)-> next.
+
+4) choose existing security group -> review & launch -> launch instances.
+
+5) ec2 dash board -> images -> AMIs (or) click on server->actions->image->create image->
+    a) give name and description
+    b) select no reebot
+    c) add new volume(EBS)
+    d) select delete on termination -> create image.
+
+6) ec2 dash board -> images -> AMIs -> select your AMI
+
+7) #Using AMI how to launch an AMI
+   select AMI-> actions ->launch instance(new linux 2 sever)
+
+8) stop/terminate linux 2 server 
+9) AMI-> Actions-> Deregister AMI  
+10) Snapshots -> Actions-> Delete Snapshot

@@ -1,0 +1,65 @@
+## how to create subnet 
+
+1) services -> VPC -> VPc dashboard -> subnets ->create subnet
+2) add name -> select your existing VPC -> add zone -> 1pv4 10.0.1.0/24 -> create
+
+AWS - Load balancers
+
+1) create new subnet #we require atleast 2 instances for load balancing
+2) create two server - 1 server for 1 subnet
+3) create server (there should be two linux servers)
+   > select your internet gateway   
+   >attach subnets to route table -> route table -> edit subnet associations ->add
+4) ec2 -> load balancers -> create load balancer -> select classic load balancer -> create
+5) select -> give name -> select your VPC-> load balancer type - TCP -> select both the subnets ->
+6) select both the subnets -> existing security group and next -> next
+7) in configure health check 
+    select ping protocol - HTTP
+    select ping port -80
+    select ping path - /index.html -> next
+8) Add two runnings instances-> next -> Key(NAME) value(LB-38-2019)->next ->Create
+9) Load balancer -> select instance -> check status if out of service -> use putty to make inservice. 
+10) open two putty windows in desktop  
+    > give server DNS addresses in in HOST name address for each putty window
+    > SSH - AUTH - add ppk file 
+    > $login as: ec2-user
+    > install HTTP in both the terminals
+    > check for instamce service again , it should be inservice 
+
+## you need to install http in server , commands to install http
+
+sudo -i
+
+yum install httpd
+
+service httpd start 
+
+##install php
+
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+
+sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+
+yum install php php-mysql
+
+service httpd restart
+
+yum update
+
+cd /var/www/html
+
+nano index.html
+
+#program
+
+<html>
+<body>
+<h1>HELLO</h1>
+</body>
+</html>
+
+#to save , ctrl+x , Y
+#type ls to check if file is saved
+
+
+

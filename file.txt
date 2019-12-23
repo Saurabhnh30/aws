@@ -1,0 +1,55 @@
+filezilla
+
+file
+ 	sitemanager
+	type-ssh
+	host (DNs of linux server)
+	logon type - key file
+	user - ec2-user
+	key file- pemfile of linux
+
+left side of filezilla is local system and right is server , can upload from ledt to right
+c:users/desktop..
+
+IAM
+
+
+services - IAM
+users - add 
+	name - user23
+	access type - select both , custom password (Maddy2506) , default
+	next
+	attach existing(Administrative access,s3 full)
+	next
+	name - user23
+	next
+	download csv
+ 	copy the link to browser(.csv) and enter username and password and access s3
+
+MS SQL
+
+create rds
+
+open sql server
+do connection
+
+create db(add n remove)
+right click db(new query)
+
+create table user23(id int,name varchar(20));
+insert into user23(id,name) values(23,'maddy');
+select * from user23;
+
+Anaconda
+
+import pyodbc 
+conn = pyodbc.connect('Driver={SQL Server};Server=db23.c8ovpznwmock.ap-south-1.rds.amazonaws.com;Database=ST;uid=Maddy;pwd=Maddy2506;Trusted_Connection=no;')
+
+cursor = conn.cursor()
+cursor.execute('SELECT * FROM dbo.user23')
+
+for row in cursor:
+    print(row)
+
+
+

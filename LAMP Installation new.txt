@@ -1,0 +1,39 @@
+﻿LAMP Installation Guide
+-------------------------------------------------------------
+sudo -i
+
+yum install httpd
+
+service httpd start
+
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+
+sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+
+yum install php php-mysql
+
+
+service httpd restart
+
+
+yum update
+
+yum install mysql-server
+service mysqld start
+
+mysql --version
+
+mysqladmin -uroot create blog
+
+mysql_secure_installation mysql
+
+Create a page to test your PHP installation:
+cd /var/www/html
+vi test.php
+
+Type i to start the insert mode
+ <?php
+         echo "Hello World!";
+     ?>
+
+

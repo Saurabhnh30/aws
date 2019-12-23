@@ -1,0 +1,11 @@
+download this
+https://download.microsoft.com/download/5/f/7/5f7acaeb-8363-451f-9425-68a90f98b238/visualcppbuildtools_full.exe?fixForIE=.exe.
+
+run this in admin cmd
+pip install -U steem
+
+then
+pip install -U pyodbc
+
+refer link
+https://stackoverflow.com/questions/44951456/pip-error-microsoft-visual-c-14-0-is-required

@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPEhtml>
+<html>
+<head>
+<metacharset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="authenticate.jsp"method="post">
+<b>Username:</b><input type="text" name="username_from_jsp"></br>
+<b>Password:</b><input type="password" name="password_from_jsp">
+<input type="submit">
+</form>
+</body>
+</html>
