@@ -1,0 +1,51 @@
+PHP progrm to retrive data from RDS server
+----------------------------------------------------
+
+sudo -i 
+
+yum install httpd
+
+service httpd start
+
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+
+sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+
+yum install php php-mysql
+
+service httpd restart
+
+yum update
+
+yum install mysql-server
+service mysqld  start
+
+mysql --version
+cd /var/www/htmlmy
+vi test.php
+
+
+
+<?php
+$servername = "myinstance.cd0clzgzuh1o.ap-south-1.rds.amazonaws.com";
+$username = "master";
+$password = "saurabh101";
+$dbname = "student";
+// Create connection
+$conn = new MySQLi($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT * FROM student";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+// output data of each row
+while($row = $result->fetch_assoc()) {
+echo "ID: " . $row["sid"]. " - Name: " . $row["sname"]."<br>";
+}
+} else {
+echo "0 results";
+}
+$conn->close();
+?>

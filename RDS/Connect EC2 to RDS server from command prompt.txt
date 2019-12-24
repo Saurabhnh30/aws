@@ -24,8 +24,8 @@ service mysql start
 
 mysql --version
 
-mysql  -u master -p -h db-server1.clzt9r7vq0jg.ap-south-1.rds.amazonaws.com -P 3306
-use emp_db_ep  (database name )
+mysql  -u master -p -h myinstance.cd0clzgzuh1o.ap-south-1.rds.amazonaws.com -P 3306
+use emp_db_ep student
 
 // master is user name
 //  db-server1.clzt9r7vq0jg.ap-south-1.rds.amazonaws.com    is end point
