@@ -1,4 +1,10 @@
+Take input :- check in error in 2nd page
+and display output in 3rd page
+----------------------------------
+
 1) File:- Login.jsp
+-----------------------
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,8 +15,8 @@
 <body>
 
 <form action="authenticate.jsp" method="post">
-    Enter Username :<input type="text" name="username"> <br>
-    Enter Password :<input type="password" name="password"><br>
+    Enter Username :<input type="text" name="username"> 
+    Enter Password :<input type="password" name="password">
     <input type="submit" value="Login">
 </form>
 
@@ -80,3 +86,6 @@ out.print(application.getAttribute("data"));
 
 </body>
 </html>
+
+
+then follow run.txt to run the application

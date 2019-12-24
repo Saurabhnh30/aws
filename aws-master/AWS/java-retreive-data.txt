@@ -2,7 +2,7 @@
 <%
 String id = request.getParameter("userId");
 String driverName = "com.mysql.jdbc.Driver";
-String connectionUrl = "jdbc:mysql://mydb.cf8knozvsvds.ap-south-1.rds.amazonaws.com/dbname"; //enter endpoint/dbname
+String connectionUrl = "jdbc:mysql://mydb.cf8knozvsvds.ap-south-1.rds.amazonaws.com/dbname"; //enter endpoint / after slash (dbname)
 String dbName = "student"; // enter database name
 String userId = "root"; //enter username
 String password = "master123"; // enter password
@@ -36,7 +36,7 @@ ResultSet resultSet = null;
 try{ 
 connection = DriverManager.getConnection(connectionUrl, userId, password);
 statement=connection.createStatement();
-String sql ="SELECT * FROM student.user_details";
+String sql ="SELECT * FROM student.user_details";// databasename.tablename
 
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){

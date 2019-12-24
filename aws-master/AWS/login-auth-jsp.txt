@@ -1,4 +1,8 @@
-Display file
+accept the input and check with database
+-----------------------------------------
+
+1) Display file
+---------------------------
 
 <!DOCTYPE html>
 <html>
@@ -8,7 +12,7 @@ Display file
 </head>
 <body>
 <form action="authenticate.jsp" method="post">
-<b>Username:</b><input type="text" name="username_from_jsp"> </br>
+<b>Username:</b><input type="text" name="username_from_jsp">
 <b>Password:</b><input type="password" name="password_from_jsp">
 <input type="submit">
 </form>

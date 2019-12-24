@@ -1,0 +1,48 @@
+click on window->
+preference-> Java Toolkit ->
+put your access key and key id
+-------------------------------
+
+generate access key click on your name in home page
+then click on security creditianls
+click outside the pop up box
+then click on 
+access key (Access key id and secret key)
+create new access key 
+use that acces key in above steps
+-----------------------------
+
+click on Help->
+Install new software-> https://aws.amazon.com/eclipse/ 
+click on add-> any file name
+then click on next->
+select all 
+accept the agrement.
+and finish
+
+run jsp->
+	
+right click on project folder->
+project facets->
+runtime libraries->
+select tomcat v7.o
+install inside xampp->inside tomcat->
+check tomcat and click on apply->
+then click on apply and close
+
+then click run -> on run as server
+then select amazon web service
+then beanstack amazon 7
+then click on next
+
+
+select region ->
+right your applica name and environment name
+select vpc and click on next
+check subnet and public assecbility
+select security group
+then click on next then again next->
+check deploy with a key pair 
+then select key and click on next
+then click on next select project and finish
+ 

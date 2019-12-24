@@ -1,5 +1,7 @@
-Taking Input from htm file
-
+accept userinput in html and display in 2nd page
+---------------------------------------
+1st File:- Taking Input from htm file
+-----------------------
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +17,9 @@ Taking Input from htm file
 </body>
 </html>
 
-
+-------------------------
 Display in 2nd file
-
+--------------------------
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>

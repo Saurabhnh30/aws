@@ -1,16 +1,17 @@
-
+copy this link to download mingw:-
+----------------------------------
 https://osdn.net/projects/mingw/releases/
 
-edit environment variable:-
-In path at last add    ;C:\MinGW\bin
+edit environment variable search in search bar:-
+select environment and in path
+In path at last add:-     ;C:\MinGW\bin
 
 #include<stdio.h>
 #include<conio.h>
 void main()
 {
     float radius,area,pi=3.14;
-    clrscr();
- 
+
     printf("Enter the Radius of a Circle : ");
     scanf("%f",&radius);
  
