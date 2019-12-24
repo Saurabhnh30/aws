@@ -1,0 +1,46 @@
+/Install R
+
+sudo apt-get dist-upgrade
+sudo apt-get upgrade
+
+sudo su
+echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/"
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+apt-get update
+apt-get install r-base
+
+// R ( This is for R command prompt)
+
+
+//After Microsoft R has been installed, you prepare the RStudio Server installation
+sudo useradd rstudio
+sudo mkdir /home/rstudio
+sudo passwd rstudio
+sudo chmod -R 0777 /home/rstudio
+
+//Next, the operating system should be updated. This has proven to prevent errors later on
+sudo apt-get update
+sudo apt-get upgrade
+
+//Now we can finally install RStudio Server:
+sudo apt-get install gdebi-core
+sudo wget "https://download2.rstudio.org/rstudio-server-0.99.903-amd64.deb"
+sudo gdebi rstudio-server-0.99.903-amd64.deb
+
+//I also recommend you install these compilers, which will enable you to install R packages:
+sudo apt-get install g++
+sudo apt-get install make
+sudo apt-get install gfortran
+
+(http://ec2-13-233-128-159.ap-south-1.compute.amazonaws.com:8787  )
+install R and Rstudio.txt
+Displaying install R and Rstudio.txt.
+
+
+//program
+
+Fibonacci <- numeric(20)
+Fibonacci[1] <- Fibonacci[2] <- 1
+for (i in 3:20) Fibonacci[i] <- Fibonacci[i - 2] + Fibonacci[i - 1]
+print("First 10 Fibonacci numbers:")
+print(Fibonacci)

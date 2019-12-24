@@ -1,0 +1,25 @@
+------------------------
+AWS Web Project:
+------------------------
+
+Step1: File -> new -> other -> AWS Java web project -> 
+Artifact ID: webproject -> Finish.
+Step2: Open package. 
+Go to src -> main -> webapp (right click) -> 
+new -> jsp file -> “file name.jsp”.
+
+Enter Same program solution 3
+Step3: Run as server -> tomcat 7 -> finish. OR Run as server -> AWS web server ->tomcat 7.
+
+------------------------
+AWS Java Project:
+---------------------
+
+Step1: File -> new -> other -> AWS Java project 
+-> -> project name: webproject, Artifact ID: webproject -> Finish.
+
+Step2: Open package. Go to src/main/java (right click) -> new 
+-> class -> “file name” -> finish.
+		Enter simple java program
+
+Step3: Run as  -> Java Application.

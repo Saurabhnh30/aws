@@ -1,0 +1,82 @@
+1) File:- Login.jsp
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Third Internal</title>
+</head>
+<body>
+
+<form action="authenticate.jsp" method="post">
+    Enter Username :<input type="text" name="username"> <br>
+    Enter Password :<input type="password" name="password"><br>
+    <input type="submit" value="Login">
+</form>
+
+</body>
+</html>
+
+---------------------------------------------
+2 File:- authenticate.jsp
+------------------------------------------
+
+<%@ page import = "java.io.*, java.util.*, java.sql.*"%>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+<%@ page import = "java.io.IOException" %>
+<%@ page import = "javax.servlet.ServletException" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>checking</title>
+</head>
+<body>
+<%
+String un=(String)request.getParameter("username");
+String pw=(String)request.getParameter("password");
+
+try {
+	
+	if(un.equals("123") && pw.equals("SJ"))
+	{
+		application.setAttribute("data", "Login Successfull");
+		response.sendRedirect("home.jsp");
+	}
+	else{
+		application.setAttribute("data", "Incorrect username or passwowrd");
+		response.sendRedirect("home.jsp");
+	}
+}
+catch(Exception e)
+
+{
+out.print(e);	
+
+}
+%>
+
+</body>
+</html>
+
+--------------------------------
+3rd File:- home.jsp
+---------------------------------
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>
+<% 
+out.print(application.getAttribute("data"));
+
+%>
+</h2>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+sudo -i 
+
+yum install httpd
+
+service httpd start
+
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+
+sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+
+yum install php php-mysql
+
+service httpd restart
+
+yum update
+
+yum install mysql-server
+service mysqld  start
+
+mysql --version
+
+create a file inside xampp -> hdocs
+run xampp
+
+in browser localhost:8080/filename.php
+
+<?php
+$servername = "msdb.c5yhwrelxuuz.ap-south-1.rds.amazonaws.com"; //endpoint
+$username = "master";//username of RDS
+$password = "123456789";//password of RDS
+$dbname = "dbsupply";//database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+$sql = "SELECT didn, dname, budget,mangerid FROM dept
+$result = $conn->query($sql);
+
+if ($result->num_rows> 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "did: " . $row["didn"]. " - dname: " . $row["dname"].  " -budget: " .$row["budget"]. "-MangerId: " .$row["mangerid].  "<br>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
+?>

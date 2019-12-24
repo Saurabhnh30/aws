@@ -1,0 +1,41 @@
+Taking Input from htm file
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+</head>
+<body>
+<form action="auth.jsp" method="post">
+<b>Username:</b><input type="text" name="username_from_jsp"> 
+<b>Password:</b><input type="text" name="password_from_jsp">
+<input type="submit">
+</form>
+</body>
+</html>
+
+
+Display in 2nd file
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1></h1>
+
+<%
+out.println(request.getParameter("username_from_jsp"));
+out.println(request.getParameter("password_from_jsp"));
+%>
+
+</body>
+</html>
+

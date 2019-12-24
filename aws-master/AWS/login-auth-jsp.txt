@@ -1,0 +1,60 @@
+Display file
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="authenticate.jsp" method="post">
+<b>Username:</b><input type="text" name="username_from_jsp"> </br>
+<b>Password:</b><input type="password" name="password_from_jsp">
+<input type="submit">
+</form>
+</body>
+</html>
+
+----------------------
+Auth file
+----------------------
+
+<%@ page import = "java.io.*, java.util.*, java.sql.*"%>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1></h1>
+
+<%
+
+String user1=(String)request.getParameter("username_from_jsp");
+String pass1=(String)request.getParameter("password_from_jsp");
+
+try {
+Class.forName("com.mysql.jdbc.Driver");  
+Connection con=DriverManager.getConnection("jdbc:mysql://mydb.cugsagu10nmy.ap-south-1.rds.amazonaws.com:3306/playzonedb","dds","mypassword");  
+Statement s= con.createStatement();
+ResultSet rs=s.executeQuery("SELECT * FROM login_details where username='"+user1+"' and password='"+pass1+"'");
+if(rs.next())
+{
+out.println("Login Successfull!");
+}
+else
+out.print("<script>alert('Invalid credentials!')</script>");	
+}
+catch(Exception e)
+
+{
+out.print(e);	
+
+}
+%>
+
+</body>
+</html>

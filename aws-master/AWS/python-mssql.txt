@@ -1,0 +1,32 @@
+https://download.microsoft.com/download/5/f/7/5f7acaeb-8363-451f-9425-68a90f98b238/visualcppbuildtools_full.exe?fixForIE=.exe.
+
+open command prompt as admin
+type this command
+pip install -U steem
+
+It will throw error ignore it..
+then
+
+pip install -U pyodbc
+--------------------------------------
+save the file file.py
+server = mssql endpoint
+database = database name
+uid = username
+pwd = password
+--------------------------------------------
+
+import pyodbc 
+conn = pyodbc.connect('Driver={SQL Server};Server=db106.ckcy3iejbfte.ap-south-1.rds.amazonaws.com;Database=TestDB;uid=rohan;pwd=RohanSingh;Trusted_Connection=no;')
+
+cursor = conn.cursor()
+cursor.execute('SELECT * FROM dbo.student')
+print("Something")
+
+for row in cursor:
+    print(row)
+
+
+
+go to command propmt
+type python3 filename.py
